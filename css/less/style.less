@@ -1,0 +1,250 @@
+// out: ../style.css
+
+/*
+  STYLE FOR QISCUS CHROME APP
+  
+  TABLE OF CONTENT
+  ============================================================================================
+  1. Import dependency
+  2. Color Palete
+  3. Global Style
+  4. Login
+  5. Rooms
+  6. Topics
+  7. Attachments
+  8. Comment
+  
+*/ 
+
+
+/*=============================================================================================
+  1. Import Depedency
+==============================================================================================*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+/*=============================================================================================
+  2. Color Pallete
+==============================================================================================*/
+@color1:#aaaaaa;
+@color2:#cccccf;
+@color3:#eeeeee;
+@color4:#ffffff;
+@color5:#000;
+
+/*=============================================================================================
+  3. Global Style
+==============================================================================================*/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Roboto",verdana,tahoma;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clear{
+  clear: both;
+}
+.clear:before,.clear:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+.container{
+  width: 300px;
+  position: relative;
+}
+.window-head{
+  height: 40px;
+  background-color: @color1;
+  color: @color4;;
+  padding: 0 8px;
+  width: 100%;
+  img{
+    margin-top: 12px;
+    margin-right: 10px;
+  }
+  h3{
+    font-size: 1.3em;
+    margin: 6px 0;
+    font-weight: 300;
+  }
+}
+.navigation{
+  height: 30px;
+  background-color: @color2;
+  color: @color4;
+  width: 100%;
+  .topics{
+    i,h4{
+      line-height: 30px;
+      margin:0 10px;
+    }
+    h4{
+      font-weight: 300;
+      margin-left: 0;
+    }
+  }
+  .room-navigation{
+    height: 30px;
+    ul{
+      padding: 0;
+      margin: 0 5px;
+      li{
+        line-height: 24px;
+        list-style: none;
+        display: inline-block;
+        margin: 3px 0;
+        &.home{
+          font-size: 1.2em;
+        } 
+        &.search{
+          font-size: 1em;
+        }
+        &.file{
+          font-size: 0.9em;
+        }
+        a{
+          height: 24px;
+          display: block;
+          color: @color4;
+          padding: 0 5px;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+        }
+        a:hover{
+          background-color: @color1;
+        }
+      }
+    }
+  } 
+}
+
+.comments{
+  .list-comments{
+    height: 350px;
+    overflow-y: hidden;
+    width: 100%;
+    h5{
+      width: 260px;
+      text-align: center;
+      color:@color5;
+      margin: 0 auto;
+      padding: 5px 0;
+      position:relative;
+      &:before{
+        content: " ";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: @color1;
+        position: absolute;
+        top: 10px;
+        z-index: -2;
+      }
+      &:after{
+        z-index: -1;
+        content: " ";
+        display: block;
+        height: 24px;
+        width: 130px;
+        margin: 0 auto;
+        background-color: @color4;
+        position: absolute;
+        top: 10px;
+        left: 65px;
+      }
+    }
+    ul{
+      padding: 0;
+      margin: 10px 10px 0 10px;
+      li{
+        list-style: none;
+        margin-bottom:10px;
+        p{
+          width: 220px;
+          background-color: @color3;
+          padding: 10px;
+          margin: 0;
+          min-height: 50px;
+          -webkit-border-radius: 3px;
+          border-radius: 3px;
+          position: relative;
+          font-size: 0.8em;
+          &:before{
+            width: 10px;
+            height: 10px;
+            background-color: @color3;
+            position: absolute;
+            transform: rotate(45deg);
+            top: 20px;
+          }
+        }
+        &.my-comment{
+          img{
+            .left;
+          }
+          p{
+            .right;
+            &:before{
+              content: "";
+              left: -5px;
+            }
+          }
+        }
+        &.others-comment{
+          img{
+            .right;
+          }
+          p{
+            .left;
+            &:before{
+              content: "";
+              right: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .write-comment{
+    height: 80px;
+    background-color: @color4;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid @color3;
+    padding: 5px;
+    textarea{
+      font-size: 0.8em;
+      border: 0;
+      resize: none;
+      height: 70px;
+      width: 100%;
+      padding-right: 3em;
+      &:focus{
+        border: 1px solid transparent;
+      }
+    }
+    i{
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      cursor: pointer;
+      padding: 5px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      color: @color1;
+      &:hover{
+        background-color: @color1;
+        color: @color4;
+      }
+    }
+  }
+} 
