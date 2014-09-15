@@ -133,9 +133,12 @@ body {
   color: #888888;
   background-color: #ffffff;
 }
+.comments {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 .comments .list-comments {
   height: 350px;
-  overflow-y: hidden;
   width: 100%;
 }
 .comments .list-comments h5 {
@@ -186,6 +189,7 @@ body {
   border-radius: 3px;
   position: relative;
   font-size: 0.8em;
+  word-wrap: break-word;
 }
 .comments .list-comments ul li p:before {
   width: 10px;
@@ -215,16 +219,15 @@ body {
   content: "";
   right: -5px;
 }
-.comments .write-comment {
+.write-comment {
   height: 80px;
   background-color: #ffffff;
-  position: fixed;
   width: 100%;
-  bottom: 0;
+  position: relative;
   border-top: 1px solid #dddddd;
   padding: 5px;
 }
-.comments .write-comment textarea {
+.write-comment textarea {
   font-size: 0.8em;
   border: 0;
   resize: none;
@@ -232,10 +235,10 @@ body {
   width: 100%;
   padding-right: 3em;
 }
-.comments .write-comment textarea:focus {
+.write-comment textarea:focus {
   border: 1px solid transparent;
 }
-.comments .write-comment i {
+.write-comment i {
   position: absolute;
   top: 5px;
   right: 15px;
@@ -245,7 +248,7 @@ body {
   border-radius: 3px;
   color: #888888;
 }
-.comments .write-comment i:hover {
+.write-comment i:hover {
   background-color: #71cd9d;
   color: #ffffff;
 }

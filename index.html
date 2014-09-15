@@ -6,8 +6,10 @@
   
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="bower_components/ng-tiny-scrollbar/dist/ng-tiny-scrollbar.css" type="text/css"/>
   
   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/ng-tiny-scrollbar/dist/ng-tiny-scrollbar.js"></script>
   <script src="js/commentsController.js"></script>
 </head>
 <body ng-controller="commentsController">
@@ -30,19 +32,19 @@
       </div>
     </div>
     <div class="comments">
-      <div class="list-comments">
+      <div class="list-comments" scrollbar="{axis: 'y', wheel: false}">
         <h5>25 Agustus 2014</h5>
         <ul>
-          <li class="others-comment clear">
+          <li class="others-comment clear" ng-repeat="comment in comments">
             <img src="img/avatar.png" class="" alt="Logo Qiscus">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, ipsum.</p>
+            <p>{{comment.message}}</p>
           </li>
         </ul>
       </div>
-      <div class="write-comment">
-        <textarea name="message" id="message" placeholder="Write Your Text"></textarea>
-        <i class="fa fa-file"></i>
-      </div>
+    </div>
+    <div class="write-comment">
+      <textarea name="message" id="message" placeholder="Write Your Text" ng-model='message' ng-keypress="postComment($event)"></textarea>
+      <i class="fa fa-file"></i>
     </div>
   </div>
 </body>

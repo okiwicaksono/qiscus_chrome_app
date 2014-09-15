@@ -152,9 +152,10 @@ body{
   } 
 }
 .comments{
+  overflow-y: scroll;
+  overflow-x: hidden;
   .list-comments{
     height: 350px;
-    overflow-y: hidden;
     width: 100%;
     h5{
       width: 260px;
@@ -202,6 +203,7 @@ body{
           border-radius: 3px;
           position: relative;
           font-size: 0.8em;
+          word-wrap: break-word;
           &:before{
             width: 10px;
             height: 10px;
@@ -238,38 +240,37 @@ body{
       }
     }
   }
-  .write-comment{
-    height: 80px;
-    background-color: @color4;
-    position: fixed;
+} 
+.write-comment{
+  height: 80px;
+  background-color: @color4;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid @color3;
+  padding: 5px;
+  textarea{
+    font-size: 0.8em;
+    border: 0;
+    resize: none;
+    height: 70px;
     width: 100%;
-    bottom: 0;
-    border-top: 1px solid @color3;
-    padding: 5px;
-    textarea{
-      font-size: 0.8em;
-      border: 0;
-      resize: none;
-      height: 70px;
-      width: 100%;
-      padding-right: 3em;
-      &:focus{
-        border: 1px solid transparent;
-      }
-    }
-    i{
-      position: absolute;
-      top: 5px;
-      right: 15px;
-      cursor: pointer;
-      padding: 5px;
-      -webkit-border-radius: 3px;
-      border-radius: 3px;
-      color: @color8;
-      &:hover{
-        background-color: @color1;
-        color: @color4;
-      }
+    padding-right: 3em;
+    &:focus{
+      border: 1px solid transparent;
     }
   }
-} 
+  i{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: @color8;
+    &:hover{
+      background-color: @color1;
+      color: @color4;
+    }
+  }
+}

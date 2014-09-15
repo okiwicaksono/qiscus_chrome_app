@@ -19,7 +19,5 @@
     "fontawesome": "~4.2.0",
     "normalize-css": "~3.0.1"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }
