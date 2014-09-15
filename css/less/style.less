@@ -20,16 +20,20 @@
 /*=============================================================================================
   1. Import Depedency
 ==============================================================================================*/
+@import "../../bower_components/fontawesome/css/font-awesome.css";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
 /*=============================================================================================
   2. Color Pallete
 ==============================================================================================*/
-@color1:#aaaaaa;
-@color2:#cccccf;
-@color3:#eeeeee;
+@color1:#71CD9D;
+@color2:#357AA3;
+@color3:#dddddd;
 @color4:#ffffff;
 @color5:#000;
+@color6:#677B96;
+@color7:#f2f2f2;
+@color8:#888;
 
 /*=============================================================================================
   3. Global Style
@@ -76,11 +80,32 @@ body{
     font-weight: 300;
   }
 }
+
+/*=============================================================================================
+  4. Login
+==============================================================================================*/
+
+/*=============================================================================================
+  5. Rooms
+==============================================================================================*/
+
+/*=============================================================================================
+  6. Topics
+==============================================================================================*/
+
+/*=============================================================================================
+  7. Attachments
+==============================================================================================*/
+
+/*=============================================================================================
+  8. Comments
+==============================================================================================*/
 .navigation{
   height: 30px;
-  background-color: @color2;
+  background-color: #666;
   color: @color4;
   width: 100%;
+  border-bottom:qpx solid @color5;
   .topics{
     i,h4{
       line-height: 30px;
@@ -119,13 +144,13 @@ body{
           border-radius: 3px;
         }
         a:hover{
-          background-color: @color1;
+          color: @color8;
+          background-color: @color4;
         }
       }
     }
   } 
 }
-
 .comments{
   .list-comments{
     height: 350px;
@@ -134,7 +159,7 @@ body{
     h5{
       width: 260px;
       text-align: center;
-      color:@color5;
+      color:@color8;
       margin: 0 auto;
       padding: 5px 0;
       position:relative;
@@ -143,9 +168,9 @@ body{
         display: block;
         height: 2px;
         width: 100%;
-        background-color: @color1;
+        background-color: @color8;
         position: absolute;
-        top: 10px;
+        top: 13px;
         z-index: -2;
       }
       &:after{
@@ -157,7 +182,7 @@ body{
         margin: 0 auto;
         background-color: @color4;
         position: absolute;
-        top: 10px;
+        top: 0;
         left: 65px;
       }
     }
@@ -169,7 +194,7 @@ body{
         margin-bottom:10px;
         p{
           width: 220px;
-          background-color: @color3;
+          background-color: @color7;
           padding: 10px;
           margin: 0;
           min-height: 50px;
@@ -180,7 +205,7 @@ body{
           &:before{
             width: 10px;
             height: 10px;
-            background-color: @color3;
+            background-color: @color7;
             position: absolute;
             transform: rotate(45deg);
             top: 20px;
@@ -240,7 +265,7 @@ body{
       padding: 5px;
       -webkit-border-radius: 3px;
       border-radius: 3px;
-      color: @color1;
+      color: @color8;
       &:hover{
         background-color: @color1;
         color: @color4;
