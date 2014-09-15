@@ -40,7 +40,6 @@
 ==============================================================================================*/
 *{
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 body{
@@ -152,11 +151,12 @@ body{
   } 
 }
 .comments{
-  overflow-y: scroll;
-  overflow-x: hidden;
   .list-comments{
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 350px;
     width: 100%;
+    position: relative;
     h5{
       width: 260px;
       text-align: center;
@@ -194,7 +194,7 @@ body{
         list-style: none;
         margin-bottom:10px;
         p{
-          width: 220px;
+          width: 210px;
           background-color: @color7;
           padding: 10px;
           margin: 0;
@@ -273,4 +273,23 @@ body{
       color: @color4;
     }
   }
+}
+::-webkit-scrollbar {
+   width: 5px;
+   height: 5px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+   height: 30px;
+   display: block;
+   background-color: transparent;
+}
+::-webkit-scrollbar-track-piece{
+   background-color: #eee;
+   -webkit-border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:vertical {
+   height: 50px;
+   background-color: #999;
+   -webkit-border-radius: 6px;
 }

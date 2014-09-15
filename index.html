@@ -2,14 +2,12 @@
 <html lang="en" ng-app='qiscusApp'>
 <head>
   <meta charset="UTF-8">
-  <title>Hello World!!!</title>
+  <title>Qiscus</title>
   
   <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="bower_components/ng-tiny-scrollbar/dist/ng-tiny-scrollbar.css" type="text/css"/>
   
   <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/ng-tiny-scrollbar/dist/ng-tiny-scrollbar.js"></script>
   <script src="js/commentsController.js"></script>
 </head>
 <body ng-controller="commentsController">
@@ -32,10 +30,10 @@
       </div>
     </div>
     <div class="comments">
-      <div class="list-comments" scrollbar="{axis: 'y', wheel: false}">
+      <div class="list-comments" ng-scrollbar>
         <h5>25 Agustus 2014</h5>
         <ul>
-          <li class="others-comment clear" ng-repeat="comment in comments">
+          <li class="others-comment clear" ng-repeat="comment in comments | orderBy:'created_at'">
             <img src="img/avatar.png" class="" alt="Logo Qiscus">
             <p>{{comment.message}}</p>
           </li>
