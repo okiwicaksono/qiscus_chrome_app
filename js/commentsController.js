@@ -1,18 +1,25 @@
-angular.module("qiscusApp",[])
+angular.module("qiscusApp",['angular-md5'])
   .controller("commentsController",['$scope','$http',function($scope,$http){
-    var roomId = 2141;
-    var topic = 4284;
+    this.roomId = 2141;
+    this.topic = 4284;
     
-    var login = {
+    this.email = "sunupf@gmail.com";
+/*    var login = {
       'user[email]':"sunupf@gmail.com",
       'user[password]':"Cup680sage874%"
     };
+    */
+    this.token = "mUuFUhDXELsfkCKbssZ7";
     
-    var token = "mUuFUhDXELsfkCKbssZ7";
+    $scope.idx = 1;
+    
+    this.test = function(){
+      $scope.idx = 2;
+    }
 
     
     $http({
-      url:'https://www.qisc.us/api/v1/mobile/topic/'+topic+'/comment/'+100000+'/token/'+token,
+      url:'https://www.qisc.us/api/v1/mobile/topic/'+this.topic+'/comment/'+100000+'/token/'+this.token,
       method:"GET",
       data:""
     }).
@@ -29,9 +36,9 @@ angular.module("qiscusApp",[])
           url:'https://www.qisc.us/api/v1/mobile/postcomment',
           method:"POST",
           data:{
-            'token' : token,
+            'token' : this.token,
             'comment' : message,
-            'topic_id' : topic
+            'topic_id' : this.topic
           }
 
         }).

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   
   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-md5/angular-md5.min.js"></script>
   <script src="js/commentsController.js"></script>
 </head>
 <body ng-controller="commentsController">
@@ -31,11 +32,17 @@
     </div>
     <div class="comments">
       <div class="list-comments" ng-scrollbar>
-        <h5>25 Agustus 2014</h5>
+        <!--<h5>25 Agustus 2014</h5>-->
         <ul>
           <li class="others-comment clear" ng-repeat="comment in comments | orderBy:'created_at'">
-            <img src="img/avatar.png" class="" alt="Logo Qiscus">
-            <p>{{comment.message}}</p>
+            <div class="avatar">
+              <img src="http://www.gravatar.com/avatar/{{ comment.username_real | gravatar }}?s=50" class="" alt="Logo Qiscus">
+              <h6>{{comment.username_as}}</h6>
+            </div>
+            <p>
+              <span class='post-date clear'>{{comment.created_at}}</span>
+              {{comment.message}}
+            </p>
           </li>
         </ul>
       </div>

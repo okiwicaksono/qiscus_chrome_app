@@ -192,7 +192,7 @@ body{
       margin: 10px 10px 0 10px;
       li{
         list-style: none;
-        margin-bottom:10px;
+        margin-bottom:20px;
         p{
           width: 210px;
           background-color: @color7;
@@ -213,8 +213,25 @@ body{
             top: 20px;
           }
         }
-        &.my-comment{
+        .avatar{
           img{
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+          }
+          h6{
+            margin: 0;
+            text-align: center;
+          }
+        }
+        p{
+          span.post-date{
+            display: block;
+            font-size: 0.6em;
+            color: #888;
+          }
+        }
+        &.my-comment{
+          .avatar{
             .left;
           }
           p{
@@ -223,10 +240,13 @@ body{
               content: "";
               left: -5px;
             }
+            span.post-date{
+              text-align: right;
+            }
           }
         }
         &.others-comment{
-          img{
+          .avatar{
             .right;
           }
           p{
@@ -234,6 +254,9 @@ body{
             &:before{
               content: "";
               right: -5px;
+            }
+            span.post-date{
+              text-align: left;
             }
           }
         }

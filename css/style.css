@@ -175,7 +175,7 @@ body {
 }
 .comments .list-comments ul li {
   list-style: none;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .comments .list-comments ul li p {
   width: 210px;
@@ -197,7 +197,20 @@ body {
   transform: rotate(45deg);
   top: 20px;
 }
-.comments .list-comments ul li.my-comment img {
+.comments .list-comments ul li .avatar img {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.comments .list-comments ul li .avatar h6 {
+  margin: 0;
+  text-align: center;
+}
+.comments .list-comments ul li p span.post-date {
+  display: block;
+  font-size: 0.6em;
+  color: #888;
+}
+.comments .list-comments ul li.my-comment .avatar {
   float: left;
 }
 .comments .list-comments ul li.my-comment p {
@@ -207,7 +220,10 @@ body {
   content: "";
   left: -5px;
 }
-.comments .list-comments ul li.others-comment img {
+.comments .list-comments ul li.my-comment p span.post-date {
+  text-align: right;
+}
+.comments .list-comments ul li.others-comment .avatar {
   float: right;
 }
 .comments .list-comments ul li.others-comment p {
@@ -216,6 +232,9 @@ body {
 .comments .list-comments ul li.others-comment p:before {
   content: "";
   right: -5px;
+}
+.comments .list-comments ul li.others-comment p span.post-date {
+  text-align: left;
 }
 .write-comment {
   height: 80px;
