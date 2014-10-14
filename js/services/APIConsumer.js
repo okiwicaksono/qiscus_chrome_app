@@ -8,7 +8,7 @@ qiscusLib.factory("APIConsumer",['$http','$q',function($http,$q){
     var config = {
       url : url,
       method : "POST",
-      data : params.data,
+      params : params.data,
     }
     
     if(params.header){

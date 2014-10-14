@@ -27,18 +27,32 @@ qiscusCache.factory("CacheApp",[function(){
       rooms = data;
       return rooms;
     },
+    getRoom : function(id){
+      for(var i in rooms){
+        if(rooms[i].id == id){
+          return rooms[i];
+        }
+      }
+    },
     getRooms : function(){
       return rooms;
     },
     getTopic : function(room_id,topic_id){
       for(var i in rooms){
-        console.log(rooms[i].id+"="+room_id);
         if(rooms[i].id == room_id){
           for(var j in rooms[i].listtopics){
             if(rooms[i].listtopics[j].id==topic_id){
               return rooms[i].listtopics[j];
             }
           }
+        }
+      }
+      return false;
+    },
+    getTopics : function(room_id){
+      for(var i in rooms){
+        if(rooms[i].id == room_id){
+          return rooms[i].listtopics;
         }
       }
       return false;

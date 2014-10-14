@@ -1,11 +1,11 @@
 <div class="window-head clear">
   <img src="img/logo16.png" class="left" alt="Logo Qiscus">
-  <h3 class="window-title left">Chrome App</h3>
+  <h3 class="window-title left">{{ room.name }}</h3>
 </div>
 <div class="navigation clear">
-  <div class="topics left clear">
+  <div class="topics left clear" ng-click='openTopics()'>
     <i class="fa fa-bars left"></i>
-    <h4 class="left">General Discussion</h4>
+    <h4 class="left">{{topicDetail.title}}</h4>
   </div>
   <div class="room-navigation right">
     <ul class="clear">
@@ -28,6 +28,15 @@
           <span class='post-date clear'>{{comment.created_at}}</span>
           {{comment.message}}
         </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="topics" ng-hide="listTopicsShow">
+  <div class="list-topics" id='list-topics'>
+    <ul>
+      <li ng-class="topic.id==topicDetail.id?'active':''" class="" ng-repeat="topic in topics">
+        <a ui-sref="comments({ room: room.id, topic: topic.id })">{{topic.title}}<i ng-class="topic.count_notif!=0?'unread':'none'">{{topic.count_notif}}</i></a>
       </li>
     </ul>
   </div>

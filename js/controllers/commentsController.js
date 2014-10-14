@@ -1,8 +1,15 @@
 qiscusModule.controller("commentsController",['$scope','$state','$stateParams','CacheApp','CommentsFactory',function($scope,$state,$stateParams,CacheApp,CommentsFactory){
-    var topic = ($stateParams.topic);
-    var room = ($stateParams.rooms);
+    
+    $scope.listTopicsShow = true;
   
-    console.log(CacheApp.getTopic(room,topic));
+    var topic = ($stateParams.topic);
+    var room = ($stateParams.room);
+  
+    $scope.room = (CacheApp.getRoom(room));
+  
+    $scope.topicDetail = (CacheApp.getTopic(room,topic));
+    $scope.topics = (CacheApp.getTopics(room));
+    
   
     CommentsFactory.loadComments(room,topic,CacheApp.getToken())
     .then(function(data){
@@ -10,8 +17,10 @@ qiscusModule.controller("commentsController",['$scope','$state','$stateParams','
       $scope.comments =(data.comments);
     });
     
-    
-   $scope.postComment = function($event){
+    $scope.openTopics = function(){
+      $scope.listTopicsShow = false;
+    }
+    $scope.postComment = function($event){
       if($event.keyCode === 13){
         var message = $scope.message;
         

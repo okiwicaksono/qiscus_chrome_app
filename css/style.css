@@ -77,6 +77,9 @@ body {
   width: 100%;
   border-bottom: qpx solid #000000;
 }
+.navigation .topics {
+  cursor: pointer;
+}
 .navigation .topics i,
 .navigation .topics h4 {
   line-height: 30px;
@@ -198,6 +201,51 @@ body {
 /*=============================================================================================
   6. Topics
 ==============================================================================================*/
+.list-topics {
+  background-color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  top: 70px;
+  height: 450px;
+  width: 100%;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  z-index: 1;
+}
+.list-topics ul {
+  padding: 0;
+  margin: 0;
+}
+.list-topics ul li {
+  line-height: 60px;
+}
+.list-topics ul li.active a {
+  color: #71cd9d;
+}
+.list-topics ul li a {
+  color: #888888;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 0 10px;
+}
+.list-topics ul li a i {
+  position: absolute;
+  right: 10px;
+  background: #888888;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  top: 20px;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 0.8em;
+}
+.list-topics ul li a:hover {
+  background-color: #f2f2f2;
+  color: #357aa3;
+}
 /*=============================================================================================
   7. Attachments
 ==============================================================================================*/
