@@ -32,6 +32,7 @@ qiscusCache.factory("CacheApp",[function(){
     },
     getTopic : function(room_id,topic_id){
       for(var i in rooms){
+        console.log(rooms[i].id+"="+room_id);
         if(rooms[i].id == room_id){
           for(var j in rooms[i].listtopics){
             if(rooms[i].listtopics[j].id==topic_id){

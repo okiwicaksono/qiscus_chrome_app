@@ -269,6 +269,9 @@ body {
   transform: rotate(45deg);
   top: 20px;
 }
+.comments .list-comments ul li .avatar {
+  width: 50px;
+}
 .comments .list-comments ul li .avatar img {
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -276,6 +279,7 @@ body {
 .comments .list-comments ul li .avatar h6 {
   margin: 0;
   text-align: center;
+  overflow: hidden;
 }
 .comments .list-comments ul li p span.post-date {
   display: block;
