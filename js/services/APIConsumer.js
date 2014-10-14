@@ -8,11 +8,11 @@ qiscusLib.factory("APIConsumer",['$http','$q',function($http,$q){
     var config = {
       url : url,
       method : "POST",
-      params : params.data,
+      data : params.data,
     }
     
     if(params.header){
-      config.header = params.header;
+      config.headers = params.header;
     }
     
     var deferred = $q.defer();
