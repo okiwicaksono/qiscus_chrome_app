@@ -8,7 +8,7 @@ qiscusModule.controller("commentsController",['$scope','$state','$stateParams','
     .then(function(data){
       $scope.email = CacheApp.getEmail();
       $scope.comments =(data.comments);
-    })
+    });
     
     
    $scope.postComment = function($event){
@@ -19,7 +19,7 @@ qiscusModule.controller("commentsController",['$scope','$state','$stateParams','
             'token' : CacheApp.getToken(),
             'comment' : message,
             'topic_id' : topic
-          }
+         };
           
         $scope.message = "";
         CommentsFactory.postComments(room,data)
@@ -27,10 +27,10 @@ qiscusModule.controller("commentsController",['$scope','$state','$stateParams','
           CommentsFactory.loadComments(room,topic,CacheApp.getToken())
           .then(function(data){
             $scope.comments =(data.comments);
-          })
-        })
+          });
+        });
       }
-    }
+   };
     
         
   }]);

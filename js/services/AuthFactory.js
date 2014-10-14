@@ -8,10 +8,9 @@ qiscusModule.factory("AuthFactory",['$http','$state','$q','APIConsumer',function
    */
   factory.authUser = function(login){
     var params = {};
-    params.data = {
-      'user[email]':login.email,
-      'user[password]':login.password
-    };
+    params.data = 
+      "user[email]=" + login.email +
+      "&user[password]=" + login.password;
     var url = 'https://www.qisc.us/users/sign_in.json';
     
     params.header = {
