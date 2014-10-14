@@ -1,0 +1,38 @@
+<div class="window-head clear">
+  <img src="img/logo16.png" class="left" alt="Logo Qiscus">
+  <h3 class="window-title left">Chrome App</h3>
+</div>
+<div class="navigation clear">
+  <div class="topics left clear">
+    <i class="fa fa-bars left"></i>
+    <h4 class="left">General Discussion</h4>
+  </div>
+  <div class="room-navigation right">
+    <ul class="clear">
+      <li class="left home"><a href="#"><i class="fa fa-home"></i></a></li>
+      <li class="left search"><a href="#"><i class="fa fa-search"></i></a></li>
+      <li class="left file"><a href="#"><i class="fa fa-file"></i></a></li>
+    </ul>
+  </div>
+</div>
+<div class="comments">
+  <div class="list-comments" id='list-comments'>
+    <!--<h5>25 Agustus 2014</h5>-->
+    <ul>
+      <li ng-class="email==comment.username_real?'my-comment':'others-comment'" class="clear" ng-repeat="comment in comments | orderBy:'created_at'">
+        <div class="avatar">
+          <img src="http://www.gravatar.com/avatar/{{ comment.username_real | gravatar }}?s=50" class="" alt="Logo Qiscus">
+          <h6>{{comment.username_as}}</h6>
+        </div>
+        <p>
+          <span class='post-date clear'>{{comment.created_at}}</span>
+          {{comment.message}}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="write-comment">
+  <textarea name="message" id="message" placeholder="Write Your Text" ng-model='message' ng-keypress="postComment($event)"></textarea>
+  <i class="fa fa-file"></i>
+</div>

@@ -9,48 +9,20 @@
   
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-md5/angular-md5.min.js"></script>
-  <script src="js/commentsController.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <script src="js/index.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services/APIConsumer.js"></script>
+  <script src="js/services/CacheApp.js"></script>
+  <script src="js/services/AuthFactory.js"></script>
+  <script src="js/services/CommentsFactory.js"></script>
+  <script src="js/services/RoomsFactory.js"></script>
+  <script src="js/controllers/commentsController.js"></script>
+  <script src="js/controllers/loginController.js"></script>
+  <script src="js/controllers/roomsController.js"></script>
 </head>
-<body ng-controller="commentsController">
-  <div class="container">
-    <div class="window-head clear">
-      <img src="img/logo16.png" class="left" alt="Logo Qiscus">
-      <h3 class="window-title left">Chrome App</h3>
-    </div>
-    <div class="navigation clear">
-      <div class="topics left clear">
-        <i class="fa fa-bars left"></i>
-        <h4 class="left">General Discussion</h4>
-      </div>
-      <div class="room-navigation right">
-        <ul class="clear">
-          <li class="left home"><a href="#"><i class="fa fa-home"></i></a></li>
-          <li class="left search"><a href="#"><i class="fa fa-search"></i></a></li>
-          <li class="left file"><a href="#"><i class="fa fa-file"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="comments">
-      <div class="list-comments" ng-scrollbar>
-        <!--<h5>25 Agustus 2014</h5>-->
-        <ul>
-          <li class="others-comment clear" ng-repeat="comment in comments | orderBy:'created_at'">
-            <div class="avatar">
-              <img src="http://www.gravatar.com/avatar/{{ comment.username_real | gravatar }}?s=50" class="" alt="Logo Qiscus">
-              <h6>{{comment.username_as}}</h6>
-            </div>
-            <p>
-              <span class='post-date clear'>{{comment.created_at}}</span>
-              {{comment.message}}
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="write-comment">
-      <textarea name="message" id="message" placeholder="Write Your Text" ng-model='message' ng-keypress="postComment($event)"></textarea>
-      <i class="fa fa-file"></i>
-    </div>
-  </div>
+<body>
+  <div class='container' ui-view></div>
 </body>
 </html>

@@ -32,6 +32,9 @@
 body {
   font-family: "Roboto", verdana, tahoma;
 }
+.none {
+  display: none;
+}
 .left {
   float: left;
 }
@@ -67,21 +70,6 @@ body {
   margin: 6px 0;
   font-weight: 300;
 }
-/*=============================================================================================
-  4. Login
-==============================================================================================*/
-/*=============================================================================================
-  5. Rooms
-==============================================================================================*/
-/*=============================================================================================
-  6. Topics
-==============================================================================================*/
-/*=============================================================================================
-  7. Attachments
-==============================================================================================*/
-/*=============================================================================================
-  8. Comments
-==============================================================================================*/
 .navigation {
   height: 30px;
   background-color: #666;
@@ -132,6 +120,90 @@ body {
   color: #888888;
   background-color: #ffffff;
 }
+/*=============================================================================================
+  4. Login
+==============================================================================================*/
+.login-form {
+  background-color: #71cd9d;
+  padding: 50px 30px;
+}
+.login-form img {
+  display: block;
+  margin: 0px auto 50px;
+}
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.login-form input[type='text'],
+.login-form input[type='password'] {
+  height: 40px;
+}
+.login-form .link {
+  margin-top: 50px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.login-form .link a {
+  text-decoration: none;
+  color: #357aa3;
+}
+.login-form .link a:hover {
+  color: #ffffff;
+}
+/*=============================================================================================
+  5. Rooms
+==============================================================================================*/
+.rooms .list-rooms {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 350px;
+  width: 100%;
+  position: relative;
+}
+.rooms .list-rooms ul {
+  padding: 0;
+  margin: 10px;
+}
+.rooms .list-rooms ul li {
+  list-style: none;
+  line-height: 60px;
+}
+.rooms .list-rooms ul li a {
+  padding: 0 10px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: #888888;
+}
+.rooms .list-rooms ul li a i {
+  position: absolute;
+  right: 10px;
+  background: #888888;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  top: 20px;
+  color: #ffffff;
+  font-style: normal;
+  font-size: 0.8em;
+}
+.rooms .list-rooms ul li a:hover {
+  background-color: #f2f2f2;
+  color: #357aa3;
+}
+/*=============================================================================================
+  6. Topics
+==============================================================================================*/
+/*=============================================================================================
+  7. Attachments
+==============================================================================================*/
+/*=============================================================================================
+  8. Comments
+==============================================================================================*/
 .comments .list-comments {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -210,30 +282,30 @@ body {
   font-size: 0.6em;
   color: #888;
 }
-.comments .list-comments ul li.my-comment .avatar {
-  float: left;
-}
-.comments .list-comments ul li.my-comment p {
-  float: right;
-}
-.comments .list-comments ul li.my-comment p:before {
-  content: "";
-  left: -5px;
-}
-.comments .list-comments ul li.my-comment p span.post-date {
-  text-align: right;
-}
 .comments .list-comments ul li.others-comment .avatar {
-  float: right;
+  float: left;
 }
 .comments .list-comments ul li.others-comment p {
-  float: left;
+  float: right;
 }
 .comments .list-comments ul li.others-comment p:before {
   content: "";
-  right: -5px;
+  left: -5px;
 }
 .comments .list-comments ul li.others-comment p span.post-date {
+  text-align: right;
+}
+.comments .list-comments ul li.my-comment .avatar {
+  float: right;
+}
+.comments .list-comments ul li.my-comment p {
+  float: left;
+}
+.comments .list-comments ul li.my-comment p:before {
+  content: "";
+  right: -5px;
+}
+.comments .list-comments ul li.my-comment p span.post-date {
   text-align: left;
 }
 .write-comment {
@@ -266,8 +338,7 @@ body {
   color: #888888;
 }
 .write-comment i:hover {
-  background-color: #71cd9d;
-  color: #ffffff;
+  color: #71cd9d;
 }
 ::-webkit-scrollbar {
   width: 5px;

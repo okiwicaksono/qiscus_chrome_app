@@ -1,0 +1,24 @@
+<div class="window-head clear">
+  <img src="img/logo16.png" class="left" alt="Logo Qiscus">
+  <h3 class="window-title left">Qiscus</h3>
+</div>
+<div class="navigation clear">
+  <div class="topics left clear">
+    <i class="fa fa-bars left"></i>
+    <h4 class="left">Rooms</h4>
+  </div>
+  <div class="room-navigation right">
+    <ul class="clear">
+      <li class="left add"><a href="#"><i class="fa fa-plus-circle"></i></a></li>
+    </ul>
+  </div>
+</div>
+<div class="rooms">
+  <div class="list-rooms" id='list-rooms'>
+    <ul>
+      <li class="clear" ng-repeat="room in rooms | orderBy:'created_at'">
+        <a ui-sref='comments({ room: room.id, topic: room.last_topic_id })'>{{room.name}}<i ng-class="room.count_unread!=0?'unread':'none'">{{room.count_unread}}</i></a>
+      </li>
+    </ul>
+  </div>
+</div>

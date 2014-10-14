@@ -22,8 +22,11 @@ describe("commentsController",function(){
       it("should be and integer and equal to 4284",function(){
         expect(controller.topic).toEqual(4284);
       });
+      it("should be and string and equal to mUuFUhDXELsfkCKbssZ7",function(){
+        expect(controller.token).toEqual("mUuFUhDXELsfkCKbssZ7");
+      });
     });
   });
   
   
-})
+});
